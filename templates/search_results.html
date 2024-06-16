@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results for Topic: {{ topic }}</h1>
+        <h2>Total Messages: {{ total_messages }}</h2>
+        <h2>Filtered Messages: {{ filtered_messages }}</h2>
+        <form action="/search" method="POST" class="filter-form">
+            <input type="hidden" name="topic" value="{{ topic }}">
+            <input type="text" name="filter_criteria" placeholder="Enter filter criteria (e.g., message['value']['targetResponse']['statusCode'] == 417)" />
+            <label for="start_timestamp">Start Timestamp:</label>
+            <input type="datetime-local" id="start_timestamp" name="start_timestamp">
+            <label for="end_timestamp">End Timestamp:</label>
+            <input type="datetime-local" id="end_timestamp" name="end_timestamp">
+            <button type="submit">Filter</button>
+        </form>
+        <div class="messages">
+            {% for message in messages %}
+                <div class="message-container">
+                    <div class="message-number">{{ message.number }}</div>
+                    <div class="message-details">
+                        <strong>Topic:</strong> {{ message['topic'] }}<br>
+                        <strong>Partition:</strong> {{ message['partition'] }}<br>
+                        <strong>Offset:</strong> {{ message['offset'] }}<br>
+                        <strong>Timestamp:</strong> {{ message['timestamp'] }}<br>
+                        <strong>Headers:</strong> {{ message['headers'] }}<br>
+                        <strong>Key:</strong> {{ message['key'] }}<br>
+                    </div>
+                    <div class="message-value">
+                        <strong>Value:</strong><br>
+                        {{ message['value'] | tojson }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/" class="back-button">Back to Topics</a>
+    </div>
+</body>
+</html>

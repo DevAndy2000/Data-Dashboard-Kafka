@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafka Topics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>All Kafka Topics</h1>
+        <div class="topic-list">
+            {% for topic in topics %}
+                <form action="/search" method="POST" class="topic-form">
+                    <input type="hidden" name="topic" value="{{ topic }}">
+                    <button type="submit">{{ topic }}</button>
+                </form>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

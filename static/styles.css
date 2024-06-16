@@ -1,0 +1,95 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Search Form Styles */
+.filter-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-form input[type="text"] {
+    width: calc(50% - 20px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.filter-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Messages Styles */
+.messages {
+    margin-top: 20px;
+}
+
+.message-container {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-details strong {
+    color: #333;
+}
+
+.message-value {
+    background-color: #e8e8e8;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    color: #333;
+}
+
+/* Back Button Styles */
+.back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
